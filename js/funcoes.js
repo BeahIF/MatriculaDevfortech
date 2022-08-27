@@ -61,6 +61,7 @@ $(function(){
 				Curso	 : $("#curso").val(),
 				HrCad    : $("#txtHora").val(),
 				DtRea    : $("#txtDataRealizacao").val(),
+				HrRea	 : $("#txtHoraRealizacao").val(),
 			});
 		localStorage.setItem("tbClientes", JSON.stringify(tbClientes));
 		alert("Informações editadas.")
@@ -152,7 +153,7 @@ $(function(){
 		// $("#txtCodigo").val(cli.Codigo).attr("readonly","readonly");
 		$("#txtNome").focus().attr("readonly","readonly");
 		$("#txtDataRealizacao").val(cli.DtRea);
-		$("txtHoraRealizacao").val(cli.HrRea);
+		$("#txtHoraRealizacao").val(cli.HrRea);
 	});
 	// Ação com base nos eventos do botão Excluir
 	$("#tblListar").on("click", ".btnExcluir", function(){
