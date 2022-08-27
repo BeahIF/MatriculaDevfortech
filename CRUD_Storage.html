@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
+	<script type="text/javascript" src="js/funcoes.js"></script> 
+	<link rel="stylesheet" href="styles/style.css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="container">
+		<div class="login">
+			
+			<!-- Formulário para cadastro dos clientes -->
+		<form id="frmCadastro">
+			<h1>Formulário de cadastro</h1>
+					<label for="txtCodigo">Código:</label>
+					<input type="text" id="txtCodigo"  /><br>
+	
+					<label for="txtNome">Nome:</label>
+					<input type="text" id="txtNome" required/><br>
+	
+					<label for="txtTelefone">Telefone:</label>
+					<input type="text" id="txtTelefone"/><br>
+	
+					<label for="txtEmail">Email:</label>
+					<input type="text" id="txtEmail" required/><br>
+	
+					<label for="txtStatus">Status:</label>
+					<input type="text" id="txtStatus" disabled /><br>
+	
+					<label for="txtDtCad">Data Cadastro:</label>
+					<input type="date" id="txtDtCad" required /><br>
+	
+					<label for="txtHora">Hora Cadastro:</label>
+					<input type="time" id="txtHora"  /><br>
+	
+					<input type="submit" value="Salvar" id="btnSalvar"/>
+		</form>
+		</div>
+<!-- Tabela para listar os clientes com possibilidade de alterar/excluir -->
+<div class="tabela">
+	<h1>Registros</h1>
+	<table id="tblListar" border="1"></table>
+	<p id="prgfrm"></p>
+</div>
+
+
+	</div>
+
+	
+	
+
+</body>
+</html>

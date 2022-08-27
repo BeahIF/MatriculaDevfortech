@@ -1,0 +1,4 @@
+1- Fazer o Design da Página
+2- Criar a validação com JavaScript para todos os campos
+3- Não deixar ativo o campo Código 
+4- Deixar a tabela com um formação em CSS
