@@ -32,8 +32,8 @@ $(function(){
 			Telefone : $("#txtTelefone").val(),
 			Email    : $("#txtEmail").val(),
 			DtCad    : $("#txtDtCad").val(),
-			HrCad    : $("#txtHrCad").val(),
-			Curso  : $("#txtCurso").val(),
+			HrCad    : $("#txtHora").val(),
+			Curso  : $("#curso").val(),
 
 
 		});
