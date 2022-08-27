@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 	<script type="text/javascript" src="js/funcoes.js"></script> 
 	<link rel="stylesheet" href="styles/style.css">
 	<title>Document</title>
@@ -16,13 +17,13 @@
 			<!-- Formulário para cadastro dos clientes -->
 		<form id="frmCadastro">
 			<h1>Formulário de cadastro</h1>
-					<label for="txtCodigo">Código:</label>
-					<input type="text" id="txtCodigo"  /><br>
+					<label for="txtCodigo">RM:</label>
+					<input type="text" id="txtCodigo"/><br>
 	
 					<label for="txtNome">Nome:</label>
 					<input type="text" id="txtNome" required/><br>
 	
-					<label for="txtTelefone">Telefone:</label>
+					<label for="txtTelefone">Celular:</label>
 					<input type="text" id="txtTelefone"/><br>
 	
 					<label for="txtEmail">Email:</label>
@@ -33,14 +34,20 @@
 	
 					<label for="txtHora">Hora Cadastro:</label>
 					<input type="time" id="txtHora"  /><br>
-					<label for="curso">Escolha um curso:</label>
 
+					<label for="txtDtCad">Data Realização:</label>
+					<input type="date" id="txtDataRealizacao" required /><br>
+	
+					<label for="txtHora">Hora Realização:</label>
+					<input type="time" id="txtHoraRealizacao"  /><br>
+
+					<label for="curso">Escolha um curso:</label>
 						<select name="curso" id="curso">
-							<option value="java">Java</option>
-							<option value="javas">JavaScript</option>
-							<option value="banco">Banco de dados</option>
-							<option value="html">HTML</option>
-							<option value="nodejs">Nodejs</option>
+							<option value="Java">Java</option>
+							<option value="Javascript">JavaScript</option>
+							<option value="Banco de Dados">Banco de dados</option>
+							<option value="HTML">HTML</option>
+							<option value="NodeJs">Nodejs</option>
 						</select>
 	
 					<input type="submit" value="Salvar" id="btnSalvar"/>

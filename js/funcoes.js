@@ -33,7 +33,9 @@ $(function(){
 			Email    : $("#txtEmail").val(),
 			DtCad    : $("#txtDtCad").val(),
 			HrCad    : $("#txtHora").val(),
-			Curso  : $("#curso").val(),
+			DtRea    : $("#txtDataRealizacao").val(),
+			HrRea    : $("#txtHoraRealizacao").val(),
+			Curso    : $("#curso").val(),
 
 
 		});
@@ -55,7 +57,10 @@ $(function(){
 				Nome     : $("#txtNome").val(),
 				Telefone : $("#txtTelefone").val(),
 				Email    : $("#txtEmail").val(),
-				DtCad    : $("#txtDtCad").val()
+				DtCad    : $("#txtDtCad").val(),
+				Curso	 : $("#curso").val(),
+				HrCad    : $("#txtHora").val(),
+				DtRea    : $("#txtDataRealizacao").val(),
 			});
 		localStorage.setItem("tbClientes", JSON.stringify(tbClientes));
 		alert("Informações editadas.")
@@ -70,13 +75,15 @@ $(function(){
 			"<thead>"+
 			"	<tr>"+
 			"<th></th>"+
-			"	<th>Código</th>"+
-			"	<th>Pessoa</th>"+
-			"	<th>Telefone</th>"+
+			"	<th>RM</th>"+
+			"	<th>Nome</th>"+
+			"	<th>Celular</th>"+
 			"	<th>Email</th>"+
 			"	<th>Data de Cadastro</th>"+
 			"	<th>Hora de Cadastro</th>"+
 			"	<th>Curso</th>"+
+			"	<th>Data de Realização</th>"+
+			"	<th>Hora de Realização</th>"+
 			"	</tr>"+
 			"</thead>"+
 			"<tbody>"+
@@ -88,6 +95,7 @@ $(function(){
 			var cli = JSON.parse(tbClientes[i]);
 			// Formatar data para o format brasileiro dia, mes, ano
 			var dtfinal = cli.DtCad.substring(8,10) + "/" +cli.DtCad.substring(5,7)  +"/"  +cli.DtCad.substring(0,4);
+			var dtfinal2 = cli.DtRea.substring(8,10) + "/" +cli.DtRea.substring(5,7)  +"/"  +cli.DtRea.substring(0,4);
 		  	$("#tblListar tbody").append("<tr>"+
 									 	 "	<td><img src='images/edit.png' alt='"+i+"' class='btnEditar'/><img src='images/delete.png' alt='"+i+"' class='btnExcluir'/></td>" + 
 										 "	<td>"+cli.Codigo+"</td>" + 
@@ -96,7 +104,9 @@ $(function(){
 										 "	<td>"+cli.Email+"</td>" + 
 										 "	<td>"+dtfinal+"</td>" + 
 										 "	<td>"+cli.HrCad+"</td>" + 
-								 "	<td>"+cli.Curso+"</td>" + 
+										 "	<td>"+cli.Curso+"</td>" + 
+										 "	<td>"+dtfinal2+"</td>" + 
+										 "	<td>"+cli.HrRea+"</td>" +
 										"<tr>");
 		 }
 	}
@@ -133,13 +143,16 @@ $(function(){
 		operacao = "E";
 		indice_selecionado = parseInt($(this).attr("alt"));
 		var cli = JSON.parse(tbClientes[indice_selecionado]);
-		$("#txtCodigo").val(cli.Codigo);
-		$("#txtNome").val(cli.Nome);
-		$("#txtTelefone").val(cli.Telefone);
-		$("#txtEmail").val(cli.Email);
-		$("#txtDtCad").val()(cli.DtCad);
-		$("#txtCodigo").attr("readonly","readonly");
-		$("#txtNome").focus();
+		$("#txtCodigo").val(cli.Codigo).attr("readonly","readonly");
+		$("#txtNome").val(cli.Nome).attr("readonly","readonly");
+		$("#txtTelefone").val(cli.Telefone).attr("readonly","readonly");
+		$("#txtEmail").val(cli.Email).attr("readonly","readonly");
+		$("#txtDtCad").val(cli.DtCad).attr("readonly","readonly");
+		$("#txtHrCad").val(cli.HrCad).attr("readonly","readonly");
+		// $("#txtCodigo").val(cli.Codigo).attr("readonly","readonly");
+		$("#txtNome").focus().attr("readonly","readonly");
+		$("#txtDataRealizacao").val(cli.DtRea);
+		$("txtHoraRealizacao").val(cli.HrRea);
 	});
 	// Ação com base nos eventos do botão Excluir
 	$("#tblListar").on("click", ".btnExcluir", function(){
@@ -204,3 +217,6 @@ $("#txtNome").change(function () {
 
 
 });
+
+
+$("#txtTelefone").mask("(00) 0000-0000");
